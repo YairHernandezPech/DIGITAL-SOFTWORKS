@@ -7,6 +7,7 @@ body, html {
   padding: 0;
   scroll-behavior: smooth;
   font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
 }
 
 /* Sección de inicio */
@@ -211,3 +212,197 @@ body, html {
   height: 70%;
   border: none;
 }
+
+/* Sección de Contacto */
+.contact-section {
+  background: linear-gradient(to bottom, black 0%, #1a1a1a 100%);
+  color: white;
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.contact-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact-section h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #E099DA;
+}
+
+.contact-subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 60px;
+  color: #cccccc;
+  letter-spacing: 2px;
+}
+
+.contact-content {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info h3 {
+  font-size: 2rem;
+  color: #E099DA;
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(224, 153, 218, 0.2);
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background: rgba(224, 153, 218, 0.1);
+  border-color: rgba(224, 153, 218, 0.4);
+  transform: translateY(-2px);
+}
+
+.contact-icon {
+  font-size: 2rem;
+  margin-right: 20px;
+  min-width: 40px;
+}
+
+.contact-item h4 {
+  font-size: 1.2rem;
+  color: #E099DA;
+  margin: 0 0 5px 0;
+}
+
+.contact-item p {
+  font-size: 1rem;
+  color: #cccccc;
+  margin: 0;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 400px;
+}
+
+.contact-form h3 {
+  font-size: 2rem;
+  color: #E099DA;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid rgba(224, 153, 218, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #E099DA;
+  background: rgba(224, 153, 218, 0.1);
+  box-shadow: 0 0 15px rgba(224, 153, 218, 0.3);
+}
+
+.form-group select option {
+  background: #1a1a1a;
+  color: white;
+}
+
+.submit-btn {
+  background: linear-gradient(45deg, #E099DA, #ff6b9d);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(45deg, #ff6b9d, #E099DA);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(224, 153, 218, 0.4);
+}
+
+.social-media {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.social-media h3 {
+  font-size: 2rem;
+  color: #E099DA;
+  margin-bottom: 30px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 15px 25px;
+  background: rgba(224, 153, 218, 0.1);
+  color: #E099DA;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 2px solid rgba(224, 153, 218, 0.3);
+  transition: all 0.3s ease;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.social-link:hover {
+  background: rgba(224, 153, 218, 0.2);
+  border-color: #E099DA;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(224, 153, 218, 0.3);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* Mobile responsive styles are now in mobile.css */
