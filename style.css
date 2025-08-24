@@ -5,9 +5,15 @@
 body, html {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
   font-family: 'Arial', sans-serif;
   overflow-x: hidden;
+}
+
+/* Optimize animations and transitions */
+* {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Sección de inicio */
@@ -19,13 +25,16 @@ body, html {
   color: #ffffff;
   position: relative;
   mask-image: linear-gradient(black 75%, transparent);
-  overflow-x: hidden;
+  /* Optimize background performance */
+  background-attachment: fixed;
+  will-change: background-position;
 }
 
 /* Imágenes animadas */
 /* Contenedor para imagen + haz */
 .light-container {
   position: absolute;
+  will-change: transform;
 }
 
 .left-image {
@@ -44,6 +53,7 @@ body, html {
   animation: float 4s ease-in-out infinite;
   z-index: 2;
   position: relative;
+  will-change: transform;
 }
 
 /* Haz de luz */
@@ -77,6 +87,9 @@ body, html {
   background-color: transparent;
   padding-top: 50px;
   padding-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar-nav {
@@ -99,6 +112,8 @@ body, html {
   text-transform: capitalize;
   text-decoration: none;
   font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 /* Contenido central */
@@ -123,7 +138,7 @@ body, html {
   font-weight: 500;
 }
 
-/* Sección de sobre nososotros */
+/* Sección de sobre nosotros */
 .about-us {
   background-color: white;
   min-height: 100vh;
@@ -171,6 +186,7 @@ body, html {
   height: 100px;
   object-fit: cover;
   border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
 /* Texto debajo */
@@ -406,3 +422,32 @@ body, html {
 
 /* ===== RESPONSIVE DESIGN ===== */
 /* Mobile responsive styles are now in mobile.css */
+
+/* Additional scroll performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Ensure proper overflow handling */
+.container, .row, .col {
+  overflow: visible;
+}
+
+/* Fix any potential scroll issues */
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: auto;
+  overflow-x: hidden;
+}
