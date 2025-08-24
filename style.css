@@ -24,8 +24,7 @@ body, html {
   background-position: center;
   color: #ffffff;
   position: relative;
-  mask-image: linear-gradient(black 75%, transparent);
-  /* Optimize background performance */
+  /* mask-image: linear-gradient(black 75%, transparent); */
   background-attachment: fixed;
   will-change: background-position;
 }
@@ -140,7 +139,7 @@ body, html {
 
 /* Sección de sobre nosotros */
 .about-us {
-  background-color: white;
+  background-color: rgb(251, 238, 252);
   min-height: 100vh;
   color: white;
   display: flex;
@@ -149,13 +148,13 @@ body, html {
   padding: 100px 20px;
   text-align: center;
   flex-direction: column;
-  mask-image: linear-gradient(to top, black 80%, transparent);
-  background: linear-gradient(to bottom, white 90%, black 100%);
+  /* mask-image: linear-gradient(to top, black 80%, transparent); */
+  /* background: linear-gradient(to bottom, white 90%, black 100%); */
   min-height: 100vh
 }
 
 .custom-btn {
-  background-color: #ffe6f0;
+  background-color: #f3aff3;
   color: #e60073;
   font-size: 16px;
   font-weight: bold;
@@ -195,6 +194,9 @@ body, html {
   font-size: 1rem;
   color: #333;
 }
+
+/*Experiencia*/
+
 
 /* seccion servicios*/
 .Servicios {
@@ -465,8 +467,8 @@ html {
 }
 
 .whatsapp-float img {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
 }
 
 .whatsapp-float:hover {
