@@ -451,3 +451,32 @@ html {
   scroll-behavior: auto;
   overflow-x: hidden;
 }
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float img {
+  width: 55px;
+  height: 55px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .whatsapp-float img {
+    width: 55px;
+    height: 55px;
+  }
+}

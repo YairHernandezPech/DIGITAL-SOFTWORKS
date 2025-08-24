@@ -1,25 +1,28 @@
 // Simple and Clean - No Complex Animations
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // Get all sections and navigation links
     const sections = document.querySelectorAll('section, .Servicios');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     // Simple navigation - just update active state
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
                 // Update active navigation state
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
                 updateActiveNav(this);
             }
         });
     });
-    
+
     // Update active navigation link
     function updateActiveNav(activeLink) {
         navLinks.forEach(link => {
@@ -27,33 +30,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         activeLink.classList.add('active');
     }
-    
+
     // Floating animation for decorative images
     const floatingImages = document.querySelectorAll('.floating-image');
     floatingImages.forEach((img, index) => {
         img.style.animationDelay = `${index * 0.3}s`;
     });
-    
+
     // Form submission handling with animation
     const contactForm = document.querySelector('.contact-form form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const submitBtn = this.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
-            
+
             // Button loading animation
             submitBtn.textContent = 'Enviando...';
             submitBtn.style.background = 'linear-gradient(45deg, #666, #999)';
             submitBtn.disabled = true;
-            
+
             // Simulate form submission (replace with actual form handling)
             setTimeout(() => {
                 // Success animation
                 submitBtn.textContent = '¡Mensaje Enviado!';
                 submitBtn.style.background = 'linear-gradient(45deg, #4CAF50, #45a049)';
-                
+
                 // Reset form
                 setTimeout(() => {
                     submitBtn.textContent = originalText;
@@ -64,13 +67,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1500);
         });
     }
-    
+
     // Gallery items - simple and clean
     const galleryItems = document.querySelectorAll('.gallery > div');
     galleryItems.forEach((item, index) => {
         // No complex animations, just simple hover effects
     });
-    
+
     // Add simple CSS for active navigation state
     const style = document.createElement('style');
     style.textContent = `
@@ -98,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
-    
+
     // Initialize page quickly
     setTimeout(() => {
         document.body.style.opacity = '1';
@@ -106,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Simple loading screen effect
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const loader = document.createElement('div');
     loader.style.cssText = `
         position: fixed;
@@ -121,16 +124,17 @@ window.addEventListener('load', function() {
         z-index: 9999;
         transition: opacity 0.3s ease-out;
     `;
-    
+
     loader.innerHTML = `
         <div style="text-align: center; color: #E099DA;">
             <h2 style="font-size: 2rem; margin-bottom: 20px;">DIGITAL SOFTWORKS</h2>
-            <div style="width: 50px; height: 50px; border: 3px solid #E099DA; border-top: 3px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+            <div style="width: 50px; height: 50px; margin: 0 auto; border: 3px solid #E099DA; border-top: 3px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
         </div>
-    `;
-    
+        `;
+
+
     document.body.appendChild(loader);
-    
+
     // Remove loader quickly
     setTimeout(() => {
         loader.style.opacity = '0';
@@ -138,7 +142,7 @@ window.addEventListener('load', function() {
             loader.remove();
         }, 300);
     }, 800);
-    
+
     // Add spin animation
     const spinStyle = document.createElement('style');
     spinStyle.textContent = `
